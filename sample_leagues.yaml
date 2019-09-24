@@ -1,0 +1,16 @@
+leagues:
+  - year: 2019
+    leagueid: 123456
+    gameid: 390
+  - year: 2018
+    leagueid: 123456
+    gameid: 380
+  - year: 2017
+    leagueid: 123456
+    gamid: 371
+  - year: 2016
+    leagueid: 123456
+    gameid: 359
+  - year: 2015
+    leagueid: 123456
+    gameid: 348
