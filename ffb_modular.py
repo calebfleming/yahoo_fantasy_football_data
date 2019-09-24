@@ -13,7 +13,7 @@ import numpy as np
 import yaml
 
 """To add:
-- Instrucitons on how to get your creds and leagues
+- Instructions on how to get your creds and leagues
 - Sample insights
 - Make authentication flow easier (less redundant)
 - Figure out rate limiting solution (if you want to pull the last 5 years, for example)
