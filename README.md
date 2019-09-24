@@ -4,6 +4,12 @@ Connect to the Yahoo API, pull down data on your fantasy football league (past a
 # Purpose
 There's still a long way to go, but the primary objective is to make your fantasy football league's data more accessible for insights. Have fun and don't get too discouraged when you find out how much of the game can be random.
 
+# Getting started
+I know right now there isn't much detail on how to get started. I'll add that soon, I hope. For now, check out these resources.
+```https://github.com/josuebrunel/yahoo-oauth/blob/master/README.md
+https://developer.yahoo.com/apps/WCeIk444/
+```
+
 # How to use this code
 https://github.com/calebfleming/yahoo_fantasy_football_data/blob/master/example_usage.ipynb
 

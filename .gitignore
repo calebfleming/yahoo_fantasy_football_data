@@ -1,3 +1,10 @@
+# Credential and key files
+yahoo_creds.yaml
+yahoo_leagues.yaml
+
+# Don't commit data files to git, fool
+*.csv
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
