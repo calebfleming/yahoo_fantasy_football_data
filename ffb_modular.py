@@ -1,6 +1,5 @@
 ###resources that helped me a lot
 #https://github.com/josuebrunel/yahoo-oauth/blob/master/README.md
-#https://developer.yahoo.com/apps/WCeIk444/
 
 import xmltodict
 import time
