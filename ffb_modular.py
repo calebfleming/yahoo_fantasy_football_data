@@ -106,6 +106,7 @@ class get_results:
               , 'player_key' : i['player_key']
               , 'team_name':i['editorial_team_full_name']
               , 'pos':i['selected_position']['position']
+              , 'eligible_pos': i['eligible_positions']['position']
               , 'bye_week': str(w) == i['bye_weeks']['week']
                 }
                 for i in z['fantasy_content']['team']['roster']['players']['player']]
@@ -274,7 +275,7 @@ class get_cleaned:
 
     # get only the columns we want
     fullSet3 = fullSet2[['bye_week', 'manager', 'pos', 'week', 'player_name_y', 'player_team_name', 'points', 'draftGrade',
-       'moves', 'owner', 'percentage', 'playoff_seed',
+       'moves', 'owner', 'percentage', 'playoff_seed', 'eligible_pos',
        'points_against', 'points_for', 'rank', 'trades',
        'leagueYear', 'total_weeks_owned', 'game_reference',
        'is_consolation', 'is_playoffs', 'actual_points', 

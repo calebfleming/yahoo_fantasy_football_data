@@ -1,9 +1,15 @@
 # Credential and key files
 yahoo_creds.yaml
 yahoo_leagues.yaml
+secrets.json
 
 # Don't commit data files to git, fool
 *.csv
+
+# Don't commit specific analyses (need to be scrubbed of league member data
+alltime-standings.ipynb
+season-of-destiny.ipynb
+whatif-newengland.ipynb
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
