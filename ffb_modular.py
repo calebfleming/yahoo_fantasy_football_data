@@ -39,10 +39,22 @@ class get_results:
     output = [(l['gameid'],l['leagueid']) for l in self.leagues if l['year'] == self.year]
     self.uniqueId = f'{output[0][0]}.l.{output[0][1]}'
   
+  def __backoff(self, y_session, query, status_code, sleeper):
+    while status_code == 999:
+        print('Sleeping', sleeper, 'seconds')
+        time.sleep(sleeper)
+        r = y_session.session.get(query)
+        status_code = r.status_code
+        sleeper *= 5
+    return r
+
   def __run_query(self, query):
     y_session = self.oauth
     r = y_session.session.get(query)
-    if (r.status_code >= 500):
+    if (r.status_code == 999):
+        print('Ratelimited -- starting backoff')
+        r = self.__backoff(y_session, query, r.status_code, 1)
+    elif (r.status_code >= 500):
         print('Bad response from yahoo: status code {0}.  retrying...'.format(r.status_code))
         r = y_session.session.get(query)
     return xmltodict.parse(r.content)
@@ -175,8 +187,9 @@ class get_results:
       z = self.__run_query(f"https://fantasysports.yahooapis.com/fantasy/v2/league/{self.uniqueId}/draftresults")
       return z['fantasy_content']['league']['draft_results']['draft_result']
 
-  def full_pull(self):
-      # run funcs
+  def part_one_pull(self):
+      '''get data on standings, scores, teams, draft results, and rosters'''
+
       standings = self.get_standings()
       print('standings retrieved')
       
@@ -192,11 +205,13 @@ class get_results:
       rosters = self.get_rosters()
       print('rosters retrieved')
       
+      return standings, scores, teams, rosters, draft_results
+
+  def part_two_pull(self, rosters):
+      #run player func (this is big)
       players = self.get_players(rosters)
       print('players retrieved')
-      
-      return standings, scores, teams, rosters, draft_results, players
-
+      return players
 
 class get_cleaned:
   def __init__(self, standings, scores, teams, rosters, draft_results, players):

@@ -1,6 +1,10 @@
 # Credential and key files
 yahoo_creds.yaml
 yahoo_leagues.yaml
+secrets.json
+
+# Only commit your example notebook (the rest are for you)
+dadbods_*.ipynb 
 
 # Don't commit data files to git, fool
 *.csv
