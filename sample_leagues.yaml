@@ -1,4 +1,7 @@
 leagues:
+  - year: 2020
+    leagueid: 123456
+    gameid: 399
   - year: 2019
     leagueid: 123456
     gameid: 390

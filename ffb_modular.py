@@ -245,6 +245,7 @@ class get_cleaned:
                               .replace('371','2017')
                               .replace('380','2018')
                               .replace('390','2019')
+                              .replace('399','2020')
                               )
     # get number of weeks a player has been owned by an owner                        
     activeWeeks = rpstJoined.groupby(['player_name_x'])['owner'].count().reset_index().rename(columns={'owner':'total_weeks_owned'})
